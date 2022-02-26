@@ -3,4 +3,4 @@ project(Labyrinth)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Labyrinth main.cpp Labyrinth.cpp MazeGenerator.cpp Validate.cpp)
+add_executable(Labyrinth Main.cpp Labyrinth.cpp MazeGenerator.cpp Validate.cpp)

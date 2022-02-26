@@ -27,7 +27,7 @@ bool Validate() {
             "SEENSWSSWENNEESSS"
     };
     string good[] {
-        "SEENSESSNNWWSSW",
+            "SEENSESSNNWWSSW",
         "SEWEWEWEWEWEWEENSESSNNWWSSW",
         "SESSWENNENSESS",
         "SESSWENNENSESSNNN",
