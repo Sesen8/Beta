@@ -22,7 +22,7 @@ const string kYourName = "Sesen Yonas";
 
 /* Change these constants to contain the paths out of your mazes. */
 const string kPathOutOfNormalMaze = "SEEENWWEESWSSENSWWWN";
-const string kPathOutOfTwistyMaze = "TODO: Replace this string with your path out of the twisty maze.";
+const string kPathOutOfTwistyMaze = "NSNNWSSEWNNWE";
 
 int main() {
     // Validate the function written by the student.
