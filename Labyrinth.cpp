@@ -6,60 +6,65 @@
 #include "Labyrinth.h"
 
 bool isPathToFreedom(MazeCell* start, const std::string& moves) {
+    MazeCell* currentPos = start;
+    bool spellbookPresent = false;
+    bool wandPresent = false;
+    bool potionPresent = false;
 
-    MazeCell* currentPosition = start;
-    bool ifFoundSpellBook = false;
-    bool ifFoundWand = false;
-    bool ifFoundPotion = false;
 
-
-    // iterates through the moves
+// iterates through the moves
     for (int i = 0; i < moves.length(); ++i){
         char nextMove = moves[i];
 
         //moves north if next char is N
         if (nextMove == 'N'){
-            currentPosition = currentPosition->north;
-        }
-
-        // moves south if next char is S
-        else if (nextMove == 'S'){
-            currentPosition = currentPosition->south;
+            currentPos = currentPos->north;
         }
 
         // moves east if next char is E
         else if (nextMove == 'E'){
-            currentPosition = currentPosition->east;
+            currentPos = currentPos->east;
         }
 
         // moves west if next char is W
         else if (nextMove == 'W'){
-            currentPosition = currentPosition->west;
+            currentPos = currentPos->west;
+        }
+        // moves south if next char is S
+        else if (nextMove == 'S'){
+            currentPos = currentPos->south;
         }
 
         // checks if next move is null if it is returns false
-        if (currentPosition == nullptr){
+        if (currentPos == nullptr){
             return false;
         }
 
         //checks if the spellbook is in the position
-        if (currentPosition->whatsHere == Item::SPELLBOOK){
-            ifFoundSpellBook = true;
-        }
-
-        //checks if the potion is in the position
-        if (currentPosition->whatsHere == Item::POTION){
-            ifFoundPotion = true;
+        if (currentPos->whatsHere == Item::SPELLBOOK){
+            spellbookPresent = true;
         }
 
         //checks if the wand is in the position
-        if (currentPosition->whatsHere == Item::WAND){
-            ifFoundWand = true;
+        if (currentPos->whatsHere == Item::WAND){
+            wandPresent = true;
         }
+
+        //checks if the potion is in the position
+        if (currentPos->whatsHere == Item::POTION){
+            potionPresent = true;
+        }
+
+        
     }
 
-
-    return ifFoundWand && ifFoundPotion && ifFoundSpellBook;
+    return spellbookPresent && wandPresent && potionPresent;
 
 
 }
+
+
+
+
+
+
